@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <style>
+   
+    #section{
+        height: 400px;
+        width: 400px;
+        border: 2px;
+        margin:50px;
+        background-image: url('img1.jpeg');
+        background-size:cover;
+        position: relative;
+    }
+    div{
+        border: 2px;
+        height: 50px;
+        width: 50px;
+        margin-left:180px;
+        font-size: 30px;
+        position: absolute;
+        top: 350px;
+    }
+    #button1{
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        text-align: center;
+        border: 2px;
+        background-color: rgb(207, 200, 200);
+        margin-left:270px;
+        margin-top: 10px;
+    }
+    #button2{
+        font-size: 15px;
+        border: none;
+        background-color: rgb(207, 200, 200) ;
+        height: 50px;
+        width: 60px;
+        border-radius: 50%;
+
+    }
+    input{
+        position: absolute;
+        top: 230px;
+        left: 150px;
+        font-size: 30px;
+        height: 30px;
+        width: 200px;
+        border: none;
+    }
+    </style>
+  
+</head>
+<body>
+   <section id="section">
+    <div>
+        <i class="fa fa-trash" aria-hidden="true"></i>
+    </div>
+    <button id="button1">Aa</button>
+   <button id="button2">Done</button>
+    </section>
+   <section id="sec"></section>
+   
+   
+</body>
+<script>
+    $(document).ready(function(){
+        $('#button1').click(function(){
+            var input=document.createElement('input')
+            $('#sec').add(input).appendTo(document.body)
+           
+        })
+        
+            
+            $('#button2').click(function(){
+              
+                z=document.getElementById('#input').value
+                var h1=document.createElement('h1')
+               
+            con=document.createTextNode(z)
+            h1.appendChild(con)
+            $('#sec').add(h1).appendTo(document.body)
+            $('h1').draggable()
+          
+    })
+    $('#button2').click(function(){
+            $('input').hide()
+        })
+           
+        })
+        $('div').droppable({
+            drop:function(event,ui){
+                $(this).addClass("color:green")
+                $('h1').hide()
+              
+        }
+    })
+</script>
+</html>
